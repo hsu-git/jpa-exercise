@@ -1,0 +1,28 @@
+package org.example.jpaexercise.config;
+
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import org.springframework.stereotype.Component;
+
+@Component
+public class JPAConfig {
+
+    private EntityManagerFactory entityManagerFactory;
+
+    public JPAConfig() {
+        try {
+            entityManagerFactory = Persistence.createEntityManagerFactory("MyPersistenceUnit");
+        } catch (Exception e) {
+            // 예외 처리: EntityManagerFactory 생성 실패 시 로그 기록 또는 예외 던지기
+            System.err.println("EntityManagerFactory 생성 실패: " + e.getMessage());
+            throw new RuntimeException("EntityManagerFactory 생성 실패", e);
+        }
+    }
+
+    public EntityManagerFactory getEntityManagerFactory() {
+        if (entityManagerFactory == null) {
+            throw new IllegalStateException("EntityManagerFactory가 초기화되지 않았습니다.");
+        }
+        return entityManagerFactory;
+    }
+}
