@@ -19,11 +19,6 @@ public class IndexController {
 
     @GetMapping
     public String index() {
-        return "index";
-    }
-
-    @PostMapping
-    public String post() {
         try (EntityManager entityManager = jpaConfig.getEntityManagerFactory().createEntityManager()) {
             entityManager.getTransaction().begin();
             entityManager.persist(new Student(UUID.randomUUID().toString()));
@@ -32,6 +27,6 @@ public class IndexController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "redirect:/";
+        return "index";
     }
 }

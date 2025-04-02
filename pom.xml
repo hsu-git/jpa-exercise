@@ -69,13 +69,16 @@
                 <version>3.4.0</version>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>.env</include>
-                </includes>
-            </resource>
-        </resources>
+<!--        <resources>-->
+<!--            &lt;!&ndash; 제발 Maven 동기화!!! &ndash;&gt;-->
+<!--            <resource>-->
+<!--                <directory>src/main/resources</directory>-->
+<!--                <includes>-->
+<!--                    <include>.env</include>-->
+<!--                    &lt;!&ndash; 그냥 이거 쓰세요 &ndash;&gt;-->
+<!--                    <include>**/*.xml</include>-->
+<!--                </includes>-->
+<!--            </resource>-->
+<!--        </resources>-->
     </build>
 </project>
