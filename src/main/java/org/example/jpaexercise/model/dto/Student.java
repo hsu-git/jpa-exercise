@@ -5,16 +5,27 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-public record Student(
-        @Id @GeneratedValue Long id,
-        String name) {
+public class Student {
+    @Id
+    @GeneratedValue
+    private Long id;
 
-    public Student() {
-        this(null, null);
+    private String name;
+
+
+    public Long getId() {
+        return id;
     }
 
-    // 이래야 JPA가 일함;;;
-    public Student(String name) {
-        this(null, name);
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
