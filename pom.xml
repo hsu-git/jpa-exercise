@@ -47,11 +47,11 @@
             <artifactId>postgresql</artifactId>
             <version>42.7.5</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+        <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
         <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>3.5.19</version>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.6.12.Final</version>
         </dependency>
     </dependencies>
 
@@ -63,5 +63,13 @@
                 <version>3.4.0</version>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>.env</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 </project>
